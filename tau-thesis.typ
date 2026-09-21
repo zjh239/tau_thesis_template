@@ -12,9 +12,7 @@
   set page(paper: "iso-b5", 
           margin: (top: 2cm, bottom: 3cm, inside: 2.5cm, outside: 2cm),
     
-    footer: context{ 
-      // text()[#h(1fr) #counter(page).display() #h(1fr)]
-    },
+    footer: none,
     numbering: "1",
   )
   set terms(indent: 1em, separator: h(1cm, weak: true) )
@@ -26,13 +24,18 @@
   // math settings
   set math.equation(numbering: n => {
     let sn = counter(heading).get().first()
-      [#sn.#n]
-    })
+      [(#sn.#n)]
+    }, supplement: [Eq.])
   
   set heading(numbering: "1.1   ")
-  
+
+  show heading: set par(justify: false)
   // chapter
   show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+
     pagebreak(weak: true, to: "odd")
     text(size: 1.8em, weight: "regular", stretch: 75%, it)
     v(6.0em)
@@ -55,12 +58,13 @@
     text(size: 1.1em, weight: "regular", stretch: 75%, it)
     v(1.0em)
   }
-  // figure and table
+
+  // figure (include image, table, code...)
   set figure(numbering: n => {
     let sn = counter(heading).get().first()
       [#sn.#n]
-    })
-  
+    }, placement: auto)
+
   show figure.where(
     kind: table
   ): set figure.caption(position: top)
@@ -68,9 +72,7 @@
   show figure.caption: it => {
     text(stretch: 75%, size: .9em, it)}
 
-  set figure(
-    placement: auto
-  )
+  show figure.where(kind: image): set figure(supplement: [Fig.])
  
   let frame() = (x, y) => (
   left: none,
@@ -93,6 +95,21 @@
     v(0.8em)
     text(weight: "semibold", it)
   }
+  // bib spacing
+  show bibliography: it => {
+    set par(spacing: 0.8em)
+    it
+  }
+  // math equation refer as no parathesis
+  show ref: it => {
+    let eq = math.equation
+    let el = it.element
+    if el == none or el.func() != eq { return it }
+      let sec = counter(heading).at(el.location()).first()
+      let eq = counter(math.equation).at(el.location()).first()
+      link(el.location(), [#it.supplement #sec.#eq])
+  }
+
   body
 }
 

@@ -23,7 +23,7 @@
       // #text(size: 14pt)[#date.display("[month repr:short] [day], [year]")]
       #v(1fr)
       ACADEMIC DISSERTATION #v(1em)
-      #text(style: "italic")[
+      #text(style: "italic", size: 0.9em)[
         To be presented for public discussion with the permission\ of the Faculty of Engineering and Natural Sciences\ of Tampere University,\ in ??? place,\ on the ?? time] #v(1em)
     ]]
   }

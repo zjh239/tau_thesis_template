@@ -85,7 +85,9 @@ Some people prefer putting this at the end. It is a matter of taste to my opinio
   [$omega$], [Vibrational frequency],
 )
 #heading(numbering: none, outlined: false, level: 2)[Abbreviations]
-#table(
+#{
+show table.cell.where(x: 0): set text(weight: "semibold")
+table(
   columns: (3em, 1fr),
   align: (right, left),
   column-gutter: 1em,
@@ -95,6 +97,7 @@ Some people prefer putting this at the end. It is a matter of taste to my opinio
   [PEL], [Potential energy landscape],
   [ART], [Activation-relaxation technique],
 )
+}
 #pagebreak(weak: true, to: "odd")
 
 // publication data
