@@ -10,23 +10,25 @@
   date: datetime(year: 2023, month: 10, day: 24), // datetime.today()
 )
 
-// title page
-#if m_title != "" {
-    page(header: none, footer: none, numbering: none)[
-    #align(center)[
-      Tampere University Dissertations ??? #h(1fr)
-      #v(10%)
-      #h(1fr)#text(size: 1.4em)[#m_author] #v(3em)
-      #h(1fr)#text(size: 1.8em, weight: "semibold")[#m_title]\
-      #h(1fr)#text(size: 1.4em)[#m_subtitle] #v(2em)
-     
-      // #text(size: 14pt)[#date.display("[month repr:short] [day], [year]")]
-      #v(1fr)
-      ACADEMIC DISSERTATION #v(1em)
-      #text(style: "italic", size: 0.9em)[
-        To be presented for public discussion with the permission\ of the Faculty of Engineering and Natural Sciences\ of Tampere University,\ in ??? place,\ on the ?? time] #v(1em)
-    ]]
-  }
+// // title page
+// #if m_title != "" {
+//     page(header: none, footer: none, numbering: none)[
+//     #align(center)[
+//       Tampere University Dissertations ??? #h(1fr)
+//       #v(10%)
+//       #h(1fr)#text(size: 1.4em)[#m_author] #v(3em)
+//       #h(1fr)#text(size: 1.8em, weight: "semibold")[#m_title]\
+//       #h(1fr)#text(size: 1.4em)[#m_subtitle] #v(2em)
+//
+//       // #text(size: 14pt)[#date.display("[month repr:short] [day], [year]")]
+//       #v(1fr)
+//       ACADEMIC DISSERTATION #v(1em)
+//       #text(style: "italic", size: 0.9em)[
+//         To be presented for public discussion with the permission\ of the Faculty of Engineering and Natural Sciences\ of Tampere University,\ in ??? place,\ on the ?? time] #v(1em)
+//     ]]
+//   }
+
+// #includepdf("title_page.pdf", 2)
 
 // pre matter
 #include "pre.typ"
@@ -56,9 +58,9 @@
 #bibliography("ref.bib", title: "Bibliography", style: "american-physics-society")
 
 // include your articles in (file name, file page) here
-// #let articles = (("1.pdf", 4),
-//                  ("1.pdf", 4),
-//                  ("1.pdf", 4),
-//                  ("1.pdf", 4))
+// #let articles = (("cover_1.pdf","1.pdf", 4),
+//                  ("cover_1.pdf","1.pdf", 4),
+//                  ("cover_1.pdf","1.pdf", 4),
+//                  ("cover_1.pdf","1.pdf", 4))
 //
 // #include_paper(articles)

@@ -113,23 +113,23 @@
   body
 }
 
-// article include
-#let tab_page(dy, i) = {
-  pagebreak(to: "odd", weak: true)
-  page(
-    margin: 0pt,
-    header: none,
-    footer: none,
-    numbering: none,
-    )[#let label = numbering("I", i)
-      #place(right + top, dy: dy, block(
-        width: 6%,
-        height: 20%,
-        fill: gray,
-        inset: 0pt, align(center + horizon)[
-          #text(fill: white, size: 2em, weight: "bold")[#label]]
-      ))]
-}
+// // article include
+// #let tab_page(dy, i) = {
+//   pagebreak(to: "odd", weak: true)
+//   page(
+//     margin: 0pt,
+//     header: none,
+//     footer: none,
+//     numbering: none,
+//     )[#let label = numbering("I", i)
+//       #place(right + top, dy: dy, block(
+//         width: 6%,
+//         height: 20%,
+//         fill: gray,
+//         inset: 0pt, align(center + horizon)[
+//           #text(fill: white, size: 2em, weight: "bold")[#label]]
+//       ))]
+// }
 
 #let includepdf(file, pages) = {
     pagebreak(to: "odd", weak: true)
@@ -148,7 +148,8 @@
   let total = paper_list.len()
   let step = 80%/(total - 1)
   for (i, pub) in paper_list.enumerate(){
-    tab_page(i*step, i + 1)
+    // tab_page(i*step, i + 1)
+    includepdf(pub.at(0), 2)
     includepdf(pub.at(0), pub.at(1))
   }
 }

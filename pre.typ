@@ -1,52 +1,60 @@
-#let ft(txt) = text(size: 0.8em, style: "italic")[#txt]
+// #let ft(txt) = text(size: 0.8em, style: "italic")[#txt]
 
 #set page(numbering: "i",
   footer: context {
     align(center)[#counter(page).display()]
   },)
-#counter(page).update(2)
-// This page is the supervisor information
-ACADEMIC DISSERTATION\
-_Tampere University, Faculty of Engineering and Natural Sciences Finland_#v(1em)
-#table(
-  columns: (12.5em, 1fr),
-  align: (left, left),
-  column-gutter: 1em, row-gutter: -.1em,
-  stroke: none,
-  [_Supervising professor_#v(.2em)],[],
-  [#h(1em)Title], [Name],
-            [],[#ft[Institute]],
-            [],[#ft[Institute]#v(1em)],
-  [_Supervisors_#v(.2em)],[],
-  [#h(1em)Title], [Name],
-            [],[#ft[Institute]],
-            [],[#ft[Institute]#v(1em)],
-
-  [_Pre-examiners_#v(.2em)],[],
-  [#h(1em)Title], [Name],
-            [],[#ft[Institute]#v(1em)],
-  [#h(1em)Title], [Name],
-            [],[#ft[Institute]#v(1em)],
-  [_Opponent_#v(.2em)],[],
-  [#h(1em)Title], [Name],
-            [],[#ft[Institute]],
-            [],[#ft[Institute]#v(1em)],
-)
-#v(1fr)
-The originality of this thesis has been checked using the Turnitin OriginalityCheck service.#v(1.5em)
-Copyright ©20?? ?author?#v(1.5em)
-Cover design: Roihu Inc.#v(1.5em)
-  ISBN ??(printed version) \
-  ISSN ?? \
-  ISBN ??(pdf version)\
-  ISSN ??\
-  `https://`#v(1.5em)
-  PunaMusta Oy -- Yliopistopaino\
-  Vantaa 2020
-
-#pagebreak(weak: true, to: "odd")
+#counter(page).update(3)
+// // This page is the supervisor information
+// ACADEMIC DISSERTATION\
+// _Tampere University, Faculty of Engineering and Natural Sciences Finland_#v(1em)
+// #table(
+//   columns: (12.5em, 1fr),
+//   align: (left, left),
+//   column-gutter: 1em, row-gutter: -.1em,
+//   stroke: none,
+//   [_Supervising professor_#v(.2em)],[],
+//   [#h(1em)Title], [Name],
+//             [],[#ft[Institute]],
+//             [],[#ft[Institute]#v(1em)],
+//   [_Supervisors_#v(.2em)],[],
+//   [#h(1em)Title], [Name],
+//             [],[#ft[Institute]],
+//             [],[#ft[Institute]#v(1em)],
+//
+//   [_Pre-examiners_#v(.2em)],[],
+//   [#h(1em)Title], [Name],
+//             [],[#ft[Institute]#v(1em)],
+//   [#h(1em)Title], [Name],
+//             [],[#ft[Institute]#v(1em)],
+//   [_Opponent_#v(.2em)],[],
+//   [#h(1em)Title], [Name],
+//             [],[#ft[Institute]],
+//             [],[#ft[Institute]#v(1em)],
+// )
+// #v(1fr)
+// The originality of this thesis has been checked using the Turnitin OriginalityCheck service.#v(1.5em)
+// Copyright ©20?? ?author?#v(1.5em)
+// Cover design: Roihu Inc.#v(1.5em)
+//   ISBN ??(printed version) \
+//   ISSN ?? \
+//   ISBN ??(pdf version)\
+//   ISSN ??\
+//   `https://`#v(1.5em)
+//   PunaMusta Oy -- Yliopistopaino\
+//   Vantaa 2020
+//
+// #pagebreak(weak: true, to: "odd")
 
 #heading(numbering: none, outlined: true, level: 1)[Acknowledgement]
+- Sep. 2026:
+
+I comment out the first 2 pages, which is the title page and supervising information page. Because it seems that you are required to use the `.docx` template for the first 2 pages. You can still insert the title page by providing the printed PDF of the title pages.
+
+Also, the article cover page is now inserted as a 2 pages PDF file. The template is also provided and you need to first make a 2 page PDF from the template. Then just put the name of the pdf in the list of data, which is at the end of the `main.typ` file.
+
+I might make an exact template for the title pages as well, but since very slight differences are inevitible, it is safer to use the template to get the exactly same output.
+
 Some people prefer putting this at the end. It is a matter of taste to my opinion.
 #pagebreak(weak: true, to: "odd")
 
