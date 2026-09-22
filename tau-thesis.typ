@@ -107,7 +107,7 @@
     if el == none or el.func() != eq { return it }
       let sec = counter(heading).at(el.location()).first()
       let eq = counter(math.equation).at(el.location()).first()
-      link(el.location(), [#it.supplement #sec.#eq])
+      link(el.location(), [#el.supplement #sec.#eq])
   }
 
   body
