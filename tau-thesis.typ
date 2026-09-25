@@ -1,14 +1,14 @@
 // tau-thesis.typ
 #let m_paper = "iso-b5"
 #let paper_counter = counter("paper")
-// 1. Define the template function. 
+// template function
 #let tau-thesis(
   title: none,
   author: none,
   date: datetime.today(),
   body,
 ) = {
-  // --- Global Settings (No '#' needed here!) ---
+  // global settings
   set page(paper: "iso-b5", 
           margin: (top: 2cm, bottom: 3cm, inside: 2.5cm, outside: 2cm),
     
@@ -17,9 +17,7 @@
   )
   set terms(indent: 1em, separator: h(1cm, weak: true) )
   set text(lang: "en", size: 10pt, font: "Noto Sans")
-  
-  // line spacing
-  set par(leading: 0.7em, justify: true) 
+  set par(leading: 0.7em, justify: true, first-line-indent: 1.5em)
   
   // math settings
   set math.equation(numbering: n => {
@@ -113,7 +111,8 @@
   body
 }
 
-// // article include
+// article include
+
 // #let tab_page(dy, i) = {
 //   pagebreak(to: "odd", weak: true)
 //   page(
