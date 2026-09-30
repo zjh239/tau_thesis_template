@@ -25,7 +25,7 @@
       [(#sn.#n)]
     }, supplement: [Eq.])
   
-  show math.equation: set text(font: "Noto Sans Math")
+  // show math.equation: set text(font: "Noto Sans Math")
   show math.equation: set block(spacing: 1.5em)
 
   set heading(numbering: "1.1   ")
