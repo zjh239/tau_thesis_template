@@ -73,7 +73,7 @@
   show figure.caption: it => {
     text(stretch: 75%, size: .9em, it)}
 
-  show figure.where(kind: image): set figure(supplement: [Fig.])
+  // show figure.where(kind: image): set figure(supplement: [Fig.])
  
   let frame() = (x, y) => (
   left: none,
